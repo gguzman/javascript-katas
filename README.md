@@ -339,6 +339,13 @@ Example 1:
 
     Input: [5, 11, 4, 18]
     Output: 38
+    
+Solution:
+```
+const sum = prices => {
+    return prices.reduce((acum, val) => acum += val)
+}
+```
 
 **Superpower:** Use the reduce function with an array of objects.
 
@@ -353,3 +360,10 @@ Example 2:
         { product: 'rock on', price: 9 },
     ]
     Output: 35
+
+Solution:
+```
+const total = items => {
+    return items.reduce((acum, { price }) => acum + price, 0)
+}
+```
