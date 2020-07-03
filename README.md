@@ -142,6 +142,14 @@ Example 2:
         { id: '1', firstname: 'Rick', lastname: 'Sanchez' },
         { id: '2', firstname: 'Morty', lastname: 'Smith' },
     ]]
+    
+Solution
+```
+const modifyUsers = (users, id, newValue) => {
+    let usersModified = users.map(item => item.id === id ? {...item, firstname: newValue} : item)
+    return [usersModified, users]
+}
+```
 
 ### Kata 6
 
@@ -213,6 +221,15 @@ Example 1:
         'Thor',
     ]
 
+Solution:
+```
+const mergeArrays = (...args) => {
+    let newArray = []
+    args.map(arg => newArray.push(...arg))
+    return newArray.sort()
+}
+```
+
 ### Kata 9
 
 **Objectives:** Sort an array by an object property: sort.
@@ -244,6 +261,13 @@ Example 2:
         { name: 'roomba', category: 'home' },
         { name: 'lego Star Wars', category: 'toys' },
     ]
+
+Solution:
+```
+const customSort = (list, fieldName) => {
+    return list.sort((a, b) => a[fieldName].localeCompare(b[fieldName]))
+}
+```
 
 **Superpower:** Arrays can also be reversed, but this method doesn't admit a callback or function to reverse the array following a certain condition. The reverse method reverses the given array. Be careful: the reverse method mutates the original array. Use it wisely.
 
